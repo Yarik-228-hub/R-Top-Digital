@@ -1,0 +1,42 @@
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Обсудим ваш проект</h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Имя *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="budget">Бюджет</label>
+                    <select id="budget" name="budget">
+                        <option value="">Выберите диапазон</option>
+                        <option value="50k-100k">50 000₽ - 100 000₽</option>
+                        <option value="100k-200k">100 000₽ - 200 000₽</option>
+                        <option value="200k-500k">200 000₽ - 500 000₽</option>
+                        <option value="500k+">от 500 000₽</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">О проекте *</label>
+                    <textarea id="message" name="message" required placeholder="Расскажите о вашем проекте, целях и задачах..."></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">
+                    Отправить заявку
+                </button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </div>
+</div>

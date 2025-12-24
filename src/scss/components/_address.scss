@@ -1,0 +1,477 @@
+.banner-small {
+    width: 468px;
+    height: 60px;
+    overflow: hidden;
+    position: absolute; /* Изменено с relative на absolute */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 100; /* Для позиционирования поверх карты */
+    top: 10px; /* Отступ от верхнего края карты */
+    left: 10px; /* Отступ от левого края карты */
+    transform-origin: left top; /* Для плавного масштабирования */
+}
+
+/* Контейнер карты должен иметь position: relative */
+.map-container {
+    position: relative !important; /* Важно для позиционирования баннера */
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Анимированный градиентный фон */
+.gradient-bg-small {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        #1a2980, #26d0ce, 
+        #3a1c71, #d76d77, 
+        #1a2980, #26d0ce);
+    background-size: 400% 400%;
+    animation: gradientFlow-small 8s ease infinite;
+}
+
+/* Фон и контур лого */
+.logo-bg-small {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn-small 0.5s ease-out 0.3s forwards;
+    z-index: 2;
+}
+
+/* Основной логотип R */
+.logo-r-small {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 28px;
+    color: white;
+    background-color: rgba(0, 212, 255, 0.9);
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0);
+    animation: popIn-small 0.4s ease-out 0.8s forwards, gentlePulse-small 2s ease-in-out 2s infinite;
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Название компании */
+.company-name-small {
+    position: absolute;
+    left: 60px;
+    top: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: textSlideIn-small 0.6s ease-out 1.2s forwards;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Подразделение */
+.division-small {
+    position: absolute;
+    left: 60px;
+    top: 36px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: textSlideIn-small 0.6s ease-out 1.4s forwards;
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Акцентная черта */
+.accent-line-small {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff);
+    background-size: 200% 100%;
+    animation: lineGrow-small 0.8s ease-out 1.8s forwards, lineFlow-small 3s linear 2.6s infinite;
+    z-index: 3;
+}
+
+/* Блик на фоне */
+.shine-effect-small {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shineMove-small 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Ключевые кадры анимации */
+@keyframes gradientFlow-small {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shineMove-small {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+@keyframes slideIn-small {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn-small {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes gentlePulse-small {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(0, 212, 255, 0);
+    }
+}
+
+@keyframes textSlideIn-small {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes lineGrow-small {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes lineFlow-small {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Эффект при наведении */
+.banner-small:hover .gradient-bg-small {
+    animation: gradientFlow-small 4s ease infinite;
+    filter: brightness(1.1);
+}
+
+.banner-small:hover .logo-r-small {
+    background-color: #ffffff;
+    color: #1a2980;
+    animation: popIn-small 0.4s ease-out 0.8s forwards, gentlePulse-small 0.8s ease-in-out 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.banner-small:hover .accent-line-small {
+    height: 4px;
+    animation: lineGrow-small 0.8s ease-out 1.8s forwards, lineFlow-small 1.5s linear 2.6s infinite;
+}
+
+.banner-small:hover .shine-effect-small {
+    animation: shineMove-small 3s ease-in-out infinite;
+}
+
+/* Адаптивные медиа-запросы для баннера */
+@media (max-width: 1200px) {
+    .banner-small {
+        transform: scale(0.9);
+        top: 8px;
+        left: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .banner-small {
+        transform: scale(0.85);
+        top: 7px;
+        left: 7px;
+    }
+}
+
+@media (max-width: 900px) {
+    .banner-small {
+        transform: scale(0.75);
+        top: 6px;
+        left: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-small {
+        transform: scale(0.65);
+        top: 5px;
+        left: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-small {
+        transform: scale(0.55);
+        top: 4px;
+        left: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-small {
+        transform: scale(0.45);
+        top: 3px;
+        left: 3px;
+    }
+    
+    .division-small {
+        display: none !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner-small {
+        transform: scale(0.35);
+        top: 2px;
+        left: 2px;
+    }
+}
+
+/* Address section - интеграция в ваш SCSS */
+.address-section {
+    padding: 4rem 20%;
+    background: var(--bg);
+    color: var(--text);
+    position: relative;
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: var(--accent);
+        font-weight: 800;
+        position: relative;
+        
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+    }
+    
+    .address-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        align-items: start;
+        
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+    
+    .address-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+    
+    .address-card {
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid rgba(100, 255, 218, 0.1);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        
+        &:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+            
+            .address-icon {
+                transform: scale(1.1);
+            }
+        }
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        
+        .address-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            
+            @media (max-width: 480px) {
+                font-size: 1.3rem;
+            }
+        }
+        
+        p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+            color: var(--text);
+            opacity: 0.9;
+        }
+        
+        .metro {
+            color: #4CAF50;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+    
+    .map-wrapper {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(100, 255, 218, 0.1);
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        padding: 10px;
+        height: 100%;
+        min-height: 400px;
+        
+        @media (max-width: 1024px) {
+            min-height: 350px;
+        }
+        
+        @media (max-width: 768px) {
+            min-height: 300px;
+            padding: 8px;
+        }
+        
+        @media (max-width: 480px) {
+            min-height: 250px;
+            padding: 5px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            
+            iframe,
+            div {
+                width: 100% !important;
+                height: 100% !important;
+                border: none;
+                border-radius: 6px;
+            }
+            
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                border-radius: 8px;
+                box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        padding: 3rem 10%;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 2rem 5%;
+        
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        padding: 2rem 1rem;
+        
+        .section-title {
+            font-size: 1.75rem;
+        }
+    }
+}
