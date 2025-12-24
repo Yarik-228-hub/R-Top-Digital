@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Главная | R-Top</title>
+</head>
+<body>
+  <header class="about-header">
+    <div class="logo">
+        <img class="logo" src="assets/images/logo.svg" alt="">
+    </div>
+    <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="index.html#services">Услуги</a></li>
+            <li><a href="index.html#portfolio">Портфолио</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+  <main>
+    <section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Создаём цифровое будущее</h1>
+        <p>Современные веб-решения, которые работают. Красиво, быстро и без лишних слов.</p>
+        <button class="cta-button modal-trigger" onclick="openModal()">Обсудить проект</button>
+    </div>
+    <div class="banner-container">
+    <div class="logo-outline"></div>
+    <img class="logo-r" src="assets/images/R-white.svg" alt="">
+    <div class="logo-glow"></div>
+    <div class="company-name">R-Top</div>
+    <div class="division">Структурное подразделение "Промышленные решения"</div>
+    <div class="text-wave"></div>
+    <div class="decoration">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+</div>
+</section>
+    <section class="services" id="services">
+    <h2 class="section-title">Что мы делаем</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>Лендинги</h3>
+            <p>Продающие страницы, которые конвертируют посетителей в клиентов. Чистый код, мгновенная загрузка.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Корпоративные сайты</h3>
+            <p>Решения для бизнеса. От визитки до сложных порталов. Лаконично и по делу.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h3>Интернет-магазины</h3>
+            <p>Продающие платформы. Простые для клиента, удобные для владельца. Интеграции, оплата, логистика.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Web Apps</h3>
+            <p>Сложные веб-приложения: CRM, SaaS, админ-панели. Full-stack разработка.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Дизайн</h3>
+            <p>UI/UX дизайн, фирменный стиль, логотипы. Красиво и функционально.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Техподдержка</h3>
+            <p>Обслуживание и развитие существующих проектов. 24/7 мониторинг.</p>
+        </div>
+    </div>
+</section>
+    <section class="portfolio" id="portfolio">
+    <h2 class="section-title">Наши работы</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item" onclick="openProject(1)">
+            <div class="portfolio-image">
+                <img class="portfolio-image" src="../assets/images/image_2025-12-23_18-51-58.webp" alt="">
+            </div>
+            <div class="portfolio-info">
+                <h4>Яндекс "Шедеврум"</h4>
+                <p>Веб-платформа для генерации картинок.</p>
+                <div class="portfolio-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openProject(2)">
+            <div class="portfolio-image">
+                <img class="portfolio-image" src="../assets/images/project2.webp" alt="">
+            </div>
+            <div class="portfolio-info">
+                <h4>АГАТ Техник</h4>
+                <p>Интернет-магазин по продаже авто</p>
+                <div class="portfolio-tags">
+                    <span class="tag">Vue.js</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openProject(3)">
+            <div class="portfolio-image">
+                <img class="portfolio-image" src="../assets/images/project3.webp" alt="">
+            </div>
+            <div class="portfolio-info">
+                <h4>Rus Boats</h4>
+                <p>Сайт по продаже водного транспорта</p>
+                <div class="portfolio-tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="about" id="about">
+    <div class="about-content">
+        <h2 class="section-title">О нас</h2>
+        <p>R-Top — небольшая команда профессионалов. Без воды и бюрократии. Просто берёмся за проект и делаем его хорошо.</p>
+        <p>Мы работаем с современными технологиями: React, Vue, Node.js, Python. Каждый проект — это вызов, который мы принимаем.</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">проектов</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">клиентов</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">года на рынке</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">клиентов возвращаются</span>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="faq" id="faq">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>Сколько стоит разработка сайта?</h4>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Стоимость зависит от сложности. Лендинг — от 50 000₽, корпоративный сайт — от 100 000₽, интернет-магазин — от 150 000₽. Точную сумму озвучим после брифа.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>Как долго длится разработка?</h4>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Лендинг — 1-2 недели, корпоративный сайт — 3-4 недели, интернет-магазин — 6-8 недель. Сроки фиксируем в договоре.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>Работаете ли по договору?</h4>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Конечно. Подписываем договор, прописываем все этапы, сроки и гарантии. Оплата поэтапная: 50% предоплата, 50% после сдачи.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>Что если сайт сломается?</h4>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Даём гарантию 6 месяцев. Исправляем все баги бесплатно. После гарантии предлагаем техническую поддержку.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="contact-info-section" id="contact">
+    <h2 class="section-title">Свяжитесь с нами</h2>
+    <p>Готовы обсудить ваш проект? Выберите удобный способ связи</p>
+    
+    <div class="contact-info">
+        <h3>Email</h3>
+        <a href="mailto:hello@r-top.ru">hello@r-top.ru</a>
+        
+        <h3>Телефон</h3>
+        <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+    </div>
+    
+    <button class="cta-button modal-trigger" onclick="openModal()" style="margin-top: 2rem;">
+        Заполнить форму
+    </button>
+</section>
+
+  </main>
+  
+  <footer>
+    <div class="contact-info">
+        <a href="mailto:hello@r-top.ru">hello@r-top.ru</a>
+        <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+    </div>
+    
+    <div class="social-links">
+        <a href="#" aria-label="Telegram">📨</a>
+        <a href="#" aria-label="GitHub">💻</a>
+        <a href="#" aria-label="Instagram">📷</a>
+    </div>
+    
+    <p class="copyright">&copy; 2025 R-Top. Все права защищены.</p>
+</footer>
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Обсудим ваш проект</h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Имя *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="budget">Бюджет</label>
+                    <select id="budget" name="budget">
+                        <option value="">Выберите диапазон</option>
+                        <option value="50k-100k">50 000₽ - 100 000₽</option>
+                        <option value="100k-200k">100 000₽ - 200 000₽</option>
+                        <option value="200k-500k">200 000₽ - 500 000₽</option>
+                        <option value="500k+">от 500 000₽</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">О проекте *</label>
+                    <textarea id="message" name="message" required placeholder="Расскажите о вашем проекте, целях и задачах..."></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">
+                    Отправить заявку
+                </button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="assets/js/slider.js"></script>
+</body>
+</html>
